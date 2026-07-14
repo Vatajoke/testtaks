@@ -1,0 +1,7 @@
+{
+  "name": "internal-dashboard-frontend",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p /out/dist && cp -r src/* /out/dist/"
+  }
+}
