@@ -27,7 +27,9 @@ app-1    | [2026-07-14 09:24:42 +0000] [1] [ERROR] Reason: App failed to load.
 3. Помилок з запуском веб - застосунку більше не спостерігав, але при відкритті http://localhost/ , отримував помилку Bad Gateway
    
    Помилка була з портами в файлі compose.yaml. Сaddy використовує в роботі стандартний http порт, тому замінив порт апки 8080 на 80
+   
    - traefik.http.services.caddy.loadbalancer.server.port=8080 - > - traefik.http.services.caddy.loadbalancer.server.port=80
+
    А сам застосунок використовує порт 8080 і роутиться через traefic, тому замінив для нього порт також
    ["CMD", "curl", "-f", "http://localhost:80/api/health"] -> ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
 
